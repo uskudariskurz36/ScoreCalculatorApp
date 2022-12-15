@@ -1,0 +1,57 @@
+﻿@model IndexViewModel
+
+<div class="row mb-3">
+    <div class="col">
+        <h1 class="display-4">Score Calculator</h1>
+        <hr />
+    </div>
+</div>
+
+<div class="row mb-3">
+    <form method="post">
+        <div class="row">
+            <div class="col-6">
+                <div>
+                    <label asp-for="Score1" class="form-label">Score 1</label>
+                    <input asp-for="Score1" class="form-control" />
+                    <span asp-validation-for="Score1" class="text-danger small"></span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div>
+                    <label asp-for="Percent1" class="form-label">Percent 1</label>
+                    <input asp-for="Percent1" type="text" class="form-control" />
+                    <span asp-validation-for="Percent1" class="text-danger small"></span>
+                </div>
+            </div>
+            <div class="col-6 pt-3">
+                <div>
+                    <label asp-for="Score2" class="form-label">Score 2</label>
+                    <input asp-for="Score2" type="text" class="form-control" />
+                    <span asp-validation-for="Score2" class="text-danger small"></span>
+                </div>
+            </div>
+            <div class="col-6 pt-3">
+                <div>
+                    <label asp-for="Percent2" class="form-label">Percent 2</label>
+                    <input asp-for="Percent2" type="text" class="form-control" />
+                    <span asp-validation-for="Percent2" class="text-danger small"></span>
+                </div>
+            </div>
+            <div class="col-12 pt-3">
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </div>
+            <div class="col-12 pt-3">
+                <hr />
+                <h2><b>Calculated Score : </b>% @Model?.CalculatedScore</h2>
+               @* <h2>
+                    <b>Calculated Score : </b>%
+                    @if (Model != null)
+                    {
+                        @Model.CalculatedScore
+                    }
+                </h2>*@
+            </div>
+        </div>
+    </form>
+</div>
